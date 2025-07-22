@@ -21,7 +21,8 @@ $events = [
     "Your investment paid off! ₱4,000" => 4000,
     "Scammed by a LOAN SHARK 🦈! Lose ₱5,000" => -5000,
     "Birthday gift! Get ₱2,000" => 2000,
-    "Unpaid taxes 😬 Pay ₱3,500" => -3500
+    "Unpaid taxes 😬 Pay ₱3,500" => -3500,
+    "It's your great grandmother's 101st birthday! Pay ₱2,000" => -2000
 ];
 
 // Process move
