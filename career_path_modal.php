@@ -1,4 +1,5 @@
 <?php
+session_start();
 $all_chose_path = true;
 foreach ($_SESSION['players'] as $player) {
     if ($player['path'] === null) {

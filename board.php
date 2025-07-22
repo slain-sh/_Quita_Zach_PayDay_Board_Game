@@ -15,7 +15,6 @@ for ($y = $rows - 2; $y > 0; $y--) $tile_map[] = [0, $y];
 
 $total_tiles = count($tile_map);
 
-require_once("career_path_modal.php");
 
 // Process move
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -56,6 +55,8 @@ $winner = $_SESSION['winner'] ?? null;
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
+<?php require_once("career_path_modal.php"); ?>
 
 <?php if ($winner): ?>
     <div class="modal">
