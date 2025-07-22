@@ -44,8 +44,9 @@ $events = [
     "Gaming is life! You joined a \"Mobile Leggings:Beng Beng\" tournament and got 2nd place! Claim ₱3,000" => 3000,
     "You helped your grandma fix her WiFi twice! Claim ₱2,500 and a granny smooch" => 2500,
     "For the money! You won a bet of calling your ex to tell them you still love them. Claim ₱2,000" => 2000
-]
+];
 $college_events = [
+
     "You got sick! Medicine's getting expensive these days. Pay ₱3,000" => -3000,
     "McDollibee midnight snack feels! Got hungry for some chicken nuggets and sundae. Pay ₱500" => -500,
     "Got scammed! Free Data 200 text scam, even gave your birthday and mother's maiden name. Pay ₱2,000" => -2000,
