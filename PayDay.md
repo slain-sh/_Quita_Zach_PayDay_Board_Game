@@ -54,3 +54,6 @@ Separate events and jobs pool for college and starting with a job
 - Kicked out of the game once you get a debt of -20,000
 
 max amount of income is p10,000 from an event
+
+## Leaderboard MySQL Integration
+- Leaderboard that displays history of the best games. Filtered by the money made by the richest player, and the least amount of moves
