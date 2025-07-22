@@ -14,15 +14,37 @@ for ($y = $rows - 2; $y > 0; $y--) $tile_map[] = [0, $y];
 $total_tiles = count($tile_map);
 
 $events = [
-    "Pay Day! Collect ₱5,000" => 5000,
-    "You got sick! Pay ₱3,000 for medicine" => -3000,
-    "You found money on the street! ₱1,000" => 1000,
-    "Car repair! Lose ₱2,000" => -2000,
-    "Your investment paid off! ₱4,000" => 4000,
-    "Scammed by a LOAN SHARK 🦈! Lose ₱5,000" => -5000,
-    "Birthday gift! Get ₱2,000" => 2000,
+    "You got sick! Medicine's getting expensive these days. Pay ₱3,000" => -3000,
+    "Car repair! Pay ₱2,000" => -2000,
     "Unpaid taxes 😬 Pay ₱3,500" => -3500,
-    "It's your great grandmother's 101st birthday! Pay ₱2,000" => -2000
+    "It's your great grandmother's 101st birthday! Pay ₱2,000" => -2000,
+    "Island Adventure! You go on a 3 day cruise. Pay ₱3,000" => -3000,
+    "So kind! You donated to the \"Free The Bees\" movement. Pay ₱2,000" => -2000,
+    "Jollibog cravings hitting hard! Got hungry for some chicken and spaghetti. Pay ₱500" => -500,
+    "Got scammed! Free Data 200 text scam, even gave your birthday and mother's maiden name. Pay ₱2,000" => -2000,
+    "Haircut promo GONE WRONG! You came out bald. Pay ₱500" => -500,
+    "Reminder for next time... You used \"Pay Later\" on Lazaddy and forgot about it. Pay ₱2,500" => -2500,
+    "Ugh! Your dog chewed your earphones again, time for some new ones. Pay ₱1,000" => -1000,
+    "Kuya, bayad mo 'yan. You spilled coffee on someone's laptop. Pay ₱5,000" => -5000,
+    "You flipped thrifted clothes and sold them online, ukay-ukay master! Claim ₱4,500" => 4500,
+    "Tita in Canada randomly sent you padala! Claim ₱2,000" => 2000,
+    "You found money on the street! Claim ₱1,000" => 1000,
+    "Your investment paid off! Claim ₱4,000" => 4000,
+    "Birthday gift! Claim ₱2,000" => 2000,
+    "You helped the old lady cross the street! Claim ₱1,000" => 1000,
+    "Your Shofee livestream comment got picked for a giveaway! Claim ₱2,000" => 2000,
+    "Whenever I see girls and boys~ You started carolling to the neighbors! Claim ₱1,000" => 1000,
+]
+$college_events = [
+    "You got sick! Medicine's getting expensive these days. Pay ₱3,000" => -3000,
+    "McDollibee midnight snack feels! Got hungry for some chicken nuggets and sundae. Pay ₱500" => -500,
+    "Got scammed! Free Data 200 text scam, even gave your birthday and mother's maiden name. Pay ₱2,000" => -2000,
+    "You sold some of your homemade crinkles to your classmates! Claim ₱1,000" => 1000,
+    "You found money on the street! Claim ₱1,000" => 1000,
+    "Birthday gift! Claim ₱2,000" => 2000,
+    "You helped the old lady cross the street! Claim ₱1,000" => 1000,
+    "Tita in Canada randomly sent you padala! Claim ₱2000" => 2000,
+    
 ];
 
 // Process move
