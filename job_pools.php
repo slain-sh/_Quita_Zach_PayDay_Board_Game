@@ -1,3 +1,4 @@
+<?php
 $college_jobs = [
     ['title' => 'Software Engineer', 'salary' => 80000],
     ['title' => 'Doctor', 'salary' => 100000],
@@ -12,3 +13,5 @@ $career_jobs = [
     ['title' => 'Factory Worker', 'salary' => 7000],
     ['title' => 'Call Center Agent', 'salary' => 5500],
 ];
+
+?>
