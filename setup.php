@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-$emoji_options = ['🦊', '🐸', '🐵', '🐱', '🐯', '🐼', '🐧', '🐷', '🐤'];
+$emoji_options = ['🦊', '🐸', '🐵', '🐱', '🐯', '🐼', '🐧', '🐷', '🐤', '🗿'];
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // If the start_game button has been pressed
@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'position' => 0,
                 'money' => 10000,
                 'path' => null,            // college or job
-                'loops' => 0,              // for tracking college graduation
+                'loops' => 0,              // for tracking big events in the game (college graduation, spouse, children, etc.)
                 'career' => null,          // filled later
                 'career_salary' => 0       // salary from chosen job
             ];
