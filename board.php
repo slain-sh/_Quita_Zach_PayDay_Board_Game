@@ -1,5 +1,6 @@
 <?php
 session_start();
+require_once("job_pools.php");
 
 $cols = 9;
 $rows = 5;
@@ -85,7 +86,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $_SESSION['turn_index'] = ($i + 1) % count($_SESSION['players']);
 }
 
-$current = $_SESSION['players'][$_SESSION['turn_index']]['name'];
+$current_name = $_SESSION['players'][$_SESSION['turn_index']]['name'];
 $last_roll = $_SESSION['last_roll'];
 $event_message = $_SESSION['event_message'] ?? null;
 $winner = $_SESSION['winner'] ?? null;
@@ -120,7 +121,7 @@ $winner = $_SESSION['winner'] ?? null;
 <?php endif; ?>
 
 <h1>💸 PayDay</h1>
-<h2>Current Turn: <?= htmlspecialchars($current) ?></h2>
+<h2>Current Turn: <?= htmlspecialchars($current_name) ?></h2>
 <?php if ($last_roll): ?>
     <p>Last Roll: <?= $last_roll ?></p>
 <?php endif; ?>

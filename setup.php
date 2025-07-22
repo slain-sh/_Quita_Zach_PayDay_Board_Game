@@ -16,7 +16,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'name' => $name ?: "Player " . ($i + 1),
                 'icon' => $icon,
                 'position' => 0,
-                'money' => 10000
+                'money' => 10000,
+                'path' => null,            // college or job
+                'loops' => 0,              // for tracking college graduation
+                'career' => null,          // filled later
+                'career_salary' => 0       // salary from chosen job
             ];
         }
 
