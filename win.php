@@ -10,7 +10,7 @@ $winner = $_SESSION['winner'] ?? 'Unknown';
 </head>
 <body>
 <h1>🏆 <?= htmlspecialchars($winner) ?> wins the game!</h1>
-<p>Congratulations on reaching ₱1,000,000!</p>
+<p>Congratulations on being the richest player!</p>
 <a href="setup.php">Play Again</a>
 </body>
 </html>

@@ -7,7 +7,7 @@ $cols = 9;
 $rows = 5;
 $tile_map = [];
 
-// Build 28-tile perimeter
+// Build 24-tile perimeter
 for ($x = 0; $x < $cols; $x++) $tile_map[] = [$x, 0];
 for ($y = 1; $y < $rows - 1; $y++) $tile_map[] = [$cols - 1, $y];
 for ($x = $cols - 1; $x >= 0; $x--) $tile_map[] = [$x, $rows - 1];
@@ -33,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $_SESSION['players'][$i]['money'] += $amount;
 
     // Check for win
-    if ($_SESSION['players'][$i]['money'] >= 1000000) {
+    if ($_SESSION['players'][$i]['money'] >= 500000) {
         $_SESSION['winner'] = $_SESSION['players'][$i]['name'];
         header('Location: board.php');
         exit;
