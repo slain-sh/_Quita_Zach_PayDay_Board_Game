@@ -10,7 +10,7 @@ or like you need ideas for events
 ## Events
 - Invest in stonks
 - loan shark - 10,000
-- payday - top right and bottom left tile (kailangan lang madaanan ng player)
+- payday - 5, 11, 17, and 23rd (+) tile (kailangan lang madaanan ng player)
 
 ## To wife or to not wife
 - 2nd loop grants the player a choice: "To wed or not to wed"

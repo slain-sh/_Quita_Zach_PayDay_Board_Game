@@ -29,7 +29,7 @@ if (!$all_chose_path) {
 
     echo '<form method="POST" class="modal">';
     echo '<div class="modal-content">';
-    echo "<h1>👣CHOOSE YOUR PATH👣</h3>";
+    echo "<h1>👣CHOOSE YOUR PATH👣</h1>";
     echo "<h3>{$_SESSION['players'][$i]['name']}, you may either: </h3>";
     echo "<p>💼 Start working now for decent money OR 🎓 go to college for higher future income!</p>";
     echo '<button type="submit" name="career_path" value="career">Start with a Job</button>';
