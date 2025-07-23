@@ -16,8 +16,8 @@ for ($y = $rows - 2; $y > 0; $y--) $tile_map[] = [0, $y];
 $total_tiles = count($tile_map);
 
 
-// Process move
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+// Process dice roll to move
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['roll_btn'])) {
     $i = $_SESSION['turn_index'];
     $roll = rand(1, 6);
     $_SESSION['last_roll'] = $roll;
@@ -85,11 +85,12 @@ $winner = $_SESSION['winner'] ?? null;
 <?php endif; ?>
 
 <form method="POST">
-    <button type="submit" class="roll-btn">Roll Dice</button>
+    <button type="submit" name="roll_btn" class="roll-btn">Roll Dice</button>
 </form>
 
 <div class="board">
 <?php
+// render the board
 for ($y = 0; $y < $rows; $y++) {
     for ($x = 0; $x < $cols; $x++) {
         $index = array_search([$x, $y], $tile_map);
