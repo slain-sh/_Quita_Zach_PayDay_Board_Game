@@ -42,6 +42,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['roll_btn'])) {
     $_SESSION['turn_index'] = ($i + 1) % count($_SESSION['players']);
 }
 
+// unsets the event message when next turn is pressed, returns to updated board 
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['next_turn'])) {
+    unset($_SESSION['event_message']);
+}
+
+
 $current_name = $_SESSION['players'][$_SESSION['turn_index']]['name'];
 $last_roll = $_SESSION['last_roll'];
 $event_message = $_SESSION['event_message'] ?? null;
@@ -72,7 +78,7 @@ $winner = $_SESSION['winner'] ?? null;
         <div class="modal-content">
             <p><?= htmlspecialchars($event_message) ?></p>
             <form method="POST">
-                <button type="submit">Next Turn</button>
+                <button type="submit" name="next_turn">Next Turn</button>
             </form>
         </div>
     </div>
