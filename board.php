@@ -33,8 +33,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['roll_btn'])) {
     $_SESSION['players'][$i]['money'] += $amount;
 
     // Check for win
-    if ($_SESSION['players'][$i]['money'] >= 500000) {
+    if ($_SESSION['players'][$i]['money'] >= 50000) {
         $_SESSION['winner'] = $_SESSION['players'][$i]['name'];
+
+        // creates row for player_leaderboard automatically when win con is met
+        require_once("DBconn.php");
+        $conn = DBconnection();
+        $name = $conn->real_escape_string($_SESSION['players'][$i]['name']);
+        $score = intval($_SESSION['players'][$i]['money']);
+
+        // checks if player exists in leaderboard, updates if higher score, if else creates a new row
+        $result = $conn->query("SELECT score FROM leaderboard WHERE player_name = '$name'");
+        if ($result && $result->num_rows > 0) {
+            $row = $result->fetch_assoc();
+            if ($score > $row['score']) {
+                $conn->query("UPDATE leaderboard SET score = $score WHERE player_name = '$name'");
+            }
+        } else {
+            $conn->query("INSERT INTO leaderboard (player_name, score) VALUES ('$name', $score)");
+        }
+        $conn->close();
+
         header('Location: board.php');
         exit;
     }
@@ -69,6 +88,7 @@ $winner = $_SESSION['winner'] ?? null;
         <div class="modal-content">
             <h2>🎉 <?= htmlspecialchars($winner) ?> Wins!</h2>
             <a href="reset.php">Play Again</a>
+            <a href="leaderboard.php">Show Leaderboard</a>
         </div>
     </div>
 <?php endif; ?>
