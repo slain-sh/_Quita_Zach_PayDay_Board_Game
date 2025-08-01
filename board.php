@@ -22,8 +22,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['roll_btn'])) {
     $roll = rand(1, 6);
     $_SESSION['last_roll'] = $roll;
 
-    $_SESSION['players'][$i]['position'] += $roll;
-    $_SESSION['players'][$i]['position'] %= $total_tiles;
+    $prev_pos = $_SESSION['players'][$i]['position'];
+    $new_pos = ($prev_pos + $roll) % $total_tiles;
+    $_SESSION['players'][$i]['position'] = $new_pos;
 
     // Milestone tiles (0-based index)
     $milestones = [4, 10, 16, 22];
@@ -40,7 +41,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['roll_btn'])) {
         }
     }
 
-
     // Trigger random event
     $event_keys = array_keys($events);
     $random_key = $event_keys[array_rand($event_keys)];
@@ -48,11 +48,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['roll_btn'])) {
     $_SESSION['event_message'] = $random_key;
     $_SESSION['players'][$i]['money'] += $amount;
 
-    // Check for win
+    // Checks for win condition
     if ($_SESSION['players'][$i]['money'] >= 50000) {
         $_SESSION['winner'] = $_SESSION['players'][$i]['name'];
 
-        // creates row for player_leaderboard automatically when win con is met
+        // creates row for player_leaderboard automatically when win con is fulfilled
         require_once("DBconn.php");
         $conn = DBconnection();
         $name = $conn->real_escape_string($_SESSION['players'][$i]['name']);
