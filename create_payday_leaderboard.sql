@@ -7,5 +7,6 @@ CREATE TABLE leaderboard (
     id INT AUTO_INCREMENT PRIMARY KEY,
     player_name VARCHAR(50) NOT NULL,
     score INT NOT NULL,
+    turns INT NOT NULL,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );

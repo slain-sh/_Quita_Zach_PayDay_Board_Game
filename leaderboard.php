@@ -2,7 +2,7 @@
 require_once("DBconn.php");
 $conn = DBconnection();
 
-$sql = "SELECT player_name, score FROM leaderboard ORDER BY score DESC LIMIT 10";
+$sql = "SELECT player_name, score, turns FROM leaderboard ORDER BY score DESC, turns ASC LIMIT 10";
 $result = $conn->query($sql);
 ?>
 
@@ -20,6 +20,7 @@ $result = $conn->query($sql);
         <th>Rank</th>
         <th>Player Name</th>
         <th>Score</th>
+        <th>Turns</th>
     </tr>
     <?php
     $rank = 1;
@@ -29,10 +30,11 @@ $result = $conn->query($sql);
             echo "<td>" . $rank++ . "</td>";
             echo "<td>" . htmlspecialchars($row['player_name']) . "</td>";
             echo "<td>" . $row['score'] . "</td>";
+            echo "<td>" . $row['turns'] . "</td>";
             echo "</tr>";
         }
     } else {
-        echo "<tr><td colspan='3'>No scores yet.</td></tr>";
+        echo "<tr><td colspan='4'>No scores yet.</td></tr>";
     }
     ?>
 </table>

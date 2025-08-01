@@ -17,7 +17,7 @@ $total_tiles = count($tile_map);
 
 
 // Process dice roll to move
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['roll_btn'])) {
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['roll_btn']) && !$winner) {
     $i = $_SESSION['turn_index'];
     $roll = rand(1, 6);
     $_SESSION['last_roll'] = $roll;
@@ -25,6 +25,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['roll_btn'])) {
     $prev_pos = $_SESSION['players'][$i]['position'];
     $new_pos = ($prev_pos + $roll) % $total_tiles;
     $_SESSION['players'][$i]['position'] = $new_pos;
+    $_SESSION['players'][$i]['turns'] += 1;
 
     // Milestone tiles (0-based index)
     $milestones = [4, 10, 16, 22];
@@ -57,6 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['roll_btn'])) {
         $conn = DBconnection();
         $name = $conn->real_escape_string($_SESSION['players'][$i]['name']);
         $score = intval($_SESSION['players'][$i]['money']);
+        $turns = intval($_SESSION['players'][$i]['turns']);
 
         // checks if player exists in leaderboard, updates if higher score, if else creates a new row
         $result = $conn->query("SELECT score FROM leaderboard WHERE player_name = '$name'");
@@ -65,8 +67,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['roll_btn'])) {
             if ($score > $row['score']) {
                 $conn->query("UPDATE leaderboard SET score = $score WHERE player_name = '$name'");
             }
+            if ($turns < $row['turns']) {
+                $conn->query("UPDATE leaderboard SET turns = $turns WHERE player_name = '$name'");
+            }
         } else {
-            $conn->query("INSERT INTO leaderboard (player_name, score) VALUES ('$name', $score)");
+            $conn->query("INSERT INTO leaderboard (player_name, score, turns) VALUES ('$name', $score, $turns)");
         }
         $conn->close();
 
@@ -97,7 +102,7 @@ $winner = $_SESSION['winner'] ?? null;
 </head>
 <body>
 
-<?php require_once("career_path_modal.php"); ?>
+<!-- <?php require_once("career_path_modal.php"); ?> -->
 
 <?php if ($winner): ?>
     <div class="modal">
@@ -109,7 +114,7 @@ $winner = $_SESSION['winner'] ?? null;
     </div>
 <?php endif; ?>
 
-<?php if ($event_message): ?>
+<?php if ($event_message && !$winner): ?>
     <div class="modal">
         <div class="modal-content">
             <p><?= htmlspecialchars($event_message) ?></p>

@@ -17,10 +17,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'icon' => $icon,
                 'position' => 0,
                 'money' => 10000,
-                'path' => null,            // college or career
-                'loops' => 0,              // for tracking big events in the game (college graduation, spouse, children, etc.)
-                'career' => null,          // filled later
-                'career_salary' => 0       // salary from chosen job
+                'turns' => 0,
+                // 'path' => null,            // college or career
+                // 'loops' => 0,              // for tracking big events in the game (college graduation, spouse, children, etc.)
+                // 'career' => null,          // filled later
+                // 'career_salary' => 0       // salary from chosen job
             ];
         }
 
