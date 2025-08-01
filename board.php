@@ -25,6 +25,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['roll_btn'])) {
     $_SESSION['players'][$i]['position'] += $roll;
     $_SESSION['players'][$i]['position'] %= $total_tiles;
 
+    // Milestone tiles (0-based index)
+    $milestones = [4, 10, 16, 22];
+
+    // Check for passing milestones using a for loop
+    for ($p = 0; $p < count($milestones); $p++) {
+        $payday = $milestones[$p];
+        // Handles wrap-around
+        if (
+            ($prev_pos < $payday && $new_pos >= $payday) ||    // checks forward movement across the board
+            ($prev_pos > $new_pos && ($payday > $prev_pos || $payday <= $new_pos))  // checks if player has wrapped around board
+        ) {
+            $_SESSION['players'][$i]['money'] += 5000;
+        }
+    }
+
+
     // Trigger random event
     $event_keys = array_keys($events);
     $random_key = $event_keys[array_rand($event_keys)];
