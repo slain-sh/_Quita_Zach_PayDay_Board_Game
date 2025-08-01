@@ -37,7 +37,7 @@ $result = $conn->query($sql);
     ?>
 </table>
 
-<p><a href="board.php">Back to Game</a></p>
+<a href="setup.php"><button>Play Again?</button></a>
 
 </body>
 </html>
