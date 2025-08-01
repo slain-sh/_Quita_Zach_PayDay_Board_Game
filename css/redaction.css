@@ -1,0 +1,189 @@
+@font-face {
+    font-family: 'Redaction 10';
+    src: local('Redaction 10'), local('Redaction10-Regular'),
+        url('assets/fonts/redaction/Redaction10-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Redaction 10';
+    src: local('Redaction 10 It'), local('Redaction10-Italic'),
+        url('assets/fonts/redaction/Redaction10-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Redaction 10';
+    src: local('Redaction 10 Bold'), local('Redaction10-Bold'),
+        url('assets/fonts/redaction/Redaction10-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Redaction 35';
+    src: local('Redaction 35 It'), local('Redaction35-Italic'),
+        url('assets/fonts/redaction/Redaction35-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Redaction 50';
+    src: local('Redaction 50 Bold'), local('Redaction50-Bold'),
+        url('assets/fonts/redaction/Redaction50-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Redaction 50';
+    src: local('Redaction 50 It'), local('Redaction50-Italic'),
+        url('assets/fonts/redaction/Redaction50-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Redaction 35';
+    src: local('Redaction 35 Bold'), local('Redaction35-Bold'),
+        url('assets/fonts/redaction/Redaction35-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Redaction 20';
+    src: local('Redaction 20 It'), local('Redaction20-Italic'),
+        url('assets/fonts/redaction/Redaction20-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Redaction 20';
+    src: local('Redaction 20 Bold'), local('Redaction20-Bold'),
+        url('assets/fonts/redaction/Redaction20-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Redaction 20';
+    src: local('Redaction 20'), local('Redaction20-Regular'),
+        url('assets/fonts/redaction/Redaction20-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Redaction 35';
+    src: local('Redaction 35'), local('Redaction35-Regular'),
+        url('assets/fonts/redaction/Redaction35-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Redaction';
+    src: local('Redaction Bold'), local('Redaction-Bold'),
+        url('assets/fonts/redaction/Redaction-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Redaction 100';
+    src: local('Redaction 100'), local('Redaction100-Regular'),
+        url('assets/fonts/redaction/Redaction100-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Redaction 70';
+    src: local('Redaction 70'), local('Redaction70-Regular'),
+        url('assets/fonts/redaction/Redaction70-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Redaction';
+    src: local('Redaction It'), local('Redaction-Italic'),
+        url('assets/fonts/redaction/Redaction-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Redaction 50';
+    src: local('Redaction 50'), local('Redaction50-Regular'),
+        url('assets/fonts/redaction/Redaction50-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Redaction';
+    src: local('Redaction'), local('Redaction-Regular'),
+        url('assets/fonts/redaction/Redaction-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Redaction 70';
+    src: local('Redaction 70 Bold'), local('Redaction70-Bold'),
+        url('assets/fonts/redaction/Redaction70-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Redaction 70';
+    src: local('Redaction 70 It'), local('Redaction70-Italic'),
+        url('assets/fonts/redaction/Redaction70-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Redaction 100';
+    src: local('Redaction 100 It'), local('Redaction100-Italic'),
+        url('assets/fonts/redaction/Redaction100-Italic.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Redaction 100';
+    src: local('Redaction 100 Bold'), local('Redaction100-Bold'),
+        url('assets/fonts/redaction/Redaction100-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+

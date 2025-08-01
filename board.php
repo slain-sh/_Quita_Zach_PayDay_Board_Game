@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once("job_pools.php");
+// require_once("job_pools.php");
 require_once("events.php");
 
 $cols = 9;
@@ -15,6 +15,9 @@ for ($y = $rows - 2; $y > 0; $y--) $tile_map[] = [0, $y];
 
 $total_tiles = count($tile_map);
 
+// Milestone tiles (0-based index)
+$milestones = [4, 10, 16, 22];
+
 
 // Process dice roll to move
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['roll_btn']) && !$winner) {
@@ -27,8 +30,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['roll_btn']) && !$winn
     $_SESSION['players'][$i]['position'] = $new_pos;
     $_SESSION['players'][$i]['turns'] += 1;
 
-    // Milestone tiles (0-based index)
-    $milestones = [4, 10, 16, 22];
 
     // Check for passing milestones using a for loop
     for ($p = 0; $p < count($milestones); $p++) {
@@ -90,6 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['next_turn'])) {
 
 $current_name = $_SESSION['players'][$_SESSION['turn_index']]['name'];
 $last_roll = $_SESSION['last_roll'];
+$last_roll_index = $_SESSION['turn_index'] - 1 == -1 ? count($_SESSION['players']) - 1 : $_SESSION['turn_index'] - 1;
 $event_message = $_SESSION['event_message'] ?? null;
 $winner = $_SESSION['winner'] ?? null;
 ?>
@@ -98,11 +100,13 @@ $winner = $_SESSION['winner'] ?? null;
 <html>
 <head>
     <title>PayDay Board</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
-<!-- <?php require_once("career_path_modal.php"); ?> -->
+<?php 
+// require_once("career_path_modal.php"); 
+?>
 
 <?php if ($winner): ?>
     <div class="modal">
@@ -128,7 +132,7 @@ $winner = $_SESSION['winner'] ?? null;
 <h1>💸 PayDay</h1>
 <h2>Current Turn: <?= htmlspecialchars($current_name) ?></h2>
 <?php if ($last_roll): ?>
-    <p>Last Roll: <?= $last_roll ?></p>
+    <p><?= htmlspecialchars($_SESSION['players'][$last_roll_index]['name']) ?> rolled: <?= $last_roll ?></p>
 <?php endif; ?>
 
 <form method="POST">

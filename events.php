@@ -31,17 +31,17 @@ $events = [
     "You helped your grandma fix her WiFi twice! 🔌 Claim ₱2,500 and a granny smooch" => 2500,
     "For the money! 😏 You won a bet of calling your ex to tell them you still love them. Claim ₱2,000" => 2000
 ];
-$college_events = [
+// $college_events = [
 
-    "You got sick! 🤒 Medicine's getting expensive these days. Pay ₱3,000" => -3000,
-    "McDollibee midnight snack feels! 🤤 Got hungry for some chicken nuggets and sundae. Pay ₱500" => -500,
-    "Got scammed! 🤬 Free Data 200 text scam, even gave your birthday and mother's maiden name. Pay ₱2,000" => -2000,
-    "Gastos lang ambag! 🙄 You contributed money for materials AND snacks for your group project. Pay ₱1,000" => -1000,
-    "Instant regret... 🙃 You joined 5 orgs. Paid all the fees. Regretted everything. Pay ₱1,500" => -1500,
-    "You sold some of your homemade crinkles to your classmates! 🍪 Claim ₱1,000" => 1000,
-    "Your leaked Math quiz answers reached the whole section! 🧮 You started to charge your classmates for it. Claim ₱3,000" => 3000,
-    "Birthday gift! 🎉 Celebrate and have a happy birthday! Claim ₱2,000" => 2000,
-    "You helped the old lady cross the street! 👵 Claim ₱1,000" => 1000,
-    "Basta 'di ako bumagsak! 😁 You offered to do your bestie's thesis formatting. Claim ₱2,000" => 2000
-];
+//     "You got sick! 🤒 Medicine's getting expensive these days. Pay ₱3,000" => -3000,
+//     "McDollibee midnight snack feels! 🤤 Got hungry for some chicken nuggets and sundae. Pay ₱500" => -500,
+//     "Got scammed! 🤬 Free Data 200 text scam, even gave your birthday and mother's maiden name. Pay ₱2,000" => -2000,
+//     "Gastos lang ambag! 🙄 You contributed money for materials AND snacks for your group project. Pay ₱1,000" => -1000,
+//     "Instant regret... 🙃 You joined 5 orgs. Paid all the fees. Regretted everything. Pay ₱1,500" => -1500,
+//     "You sold some of your homemade crinkles to your classmates! 🍪 Claim ₱1,000" => 1000,
+//     "Your leaked Math quiz answers reached the whole section! 🧮 You started to charge your classmates for it. Claim ₱3,000" => 3000,
+//     "Birthday gift! 🎉 Celebrate and have a happy birthday! Claim ₱2,000" => 2000,
+//     "You helped the old lady cross the street! 👵 Claim ₱1,000" => 1000,
+//     "Basta 'di ako bumagsak! 😁 You offered to do your bestie's thesis formatting. Claim ₱2,000" => 2000
+// ];
 ?>

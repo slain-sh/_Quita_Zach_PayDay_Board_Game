@@ -10,6 +10,7 @@ $result = $conn->query($sql);
 <html>
 <head>
     <title>Leaderboard</title>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
