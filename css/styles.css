@@ -22,6 +22,16 @@ body {
     text-align: center;
     vertical-align: top;
     animation: fadeIn 0.3s ease-in;
+    box-sizing: border-box;
+}
+
+.tile.payday {
+    background-color: green;
+}
+
+.tile.start {
+    z-index: 1;
+    background: #1d3557;
 }
 
 .tile.empty {
@@ -30,6 +40,7 @@ body {
 }
 
 .tile-num {
+    z-index: 2;
     font-size: 0.8em;
     color: #888;
     position: absolute;
@@ -38,6 +49,7 @@ body {
 }
 
 .tokens {
+    z-index: 1;
     position: absolute;
     bottom: 4px;
     left: 4px;
@@ -91,7 +103,7 @@ button {
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0;
     background: rgba(0, 0, 0, 0.6);
-    z-index: 2;
+    z-index: 3;
     display: flex;
     justify-content: center;
     align-items: center;
