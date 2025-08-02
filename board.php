@@ -18,7 +18,6 @@ $total_tiles = count($tile_map);
 // Milestone tiles (0-based index)
 $milestones = [4, 10, 16, 22];
 
-
 // Process dice roll to move
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['roll_btn']) && !$winner) {
     $i = $_SESSION['turn_index'];
@@ -147,6 +146,12 @@ for ($y = 0; $y < $rows; $y++) {
         $index = array_search([$x, $y], $tile_map);
         if ($index === false) {
             echo "<div class='tile empty'></div>";
+            continue;
+        }
+        if ($index === 0) {
+            echo "<div class='tile start'>";
+            echo "<span class='tile-num'>" . ($index + 1) . "</span>";
+            echo "</div>";
             continue;
         }
 
